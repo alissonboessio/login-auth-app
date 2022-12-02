@@ -5,7 +5,7 @@ import "./homePage.css";
 import { AuthContext } from "../../contexts/auth";
 
 const HomePage = () => {
-	const { authenticated, logout, dash } = useContext(AuthContext);
+	const { logout, dash } = useContext(AuthContext);
 	const handleLogout = (e) => {
 		e.preventDefault();
 		logout();

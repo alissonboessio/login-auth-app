@@ -1,4 +1,3 @@
-import { waitFor } from "@testing-library/react";
 import React, { useEffect, useState, createContext } from "react";
 
 import { useNavigate } from "react-router-dom";
@@ -40,6 +39,12 @@ export const AuthProvider = ({ children }) => {
 			localStorage.setItem("user", JSON.stringify(loggedUser));
 			setUser(loggedUser);
 			navigate("/");
+		} else {
+			alert("Usuário ou senha errados! ");
+			// Aqui limpa os inputs do form, caso o usuario errar os dados
+			Array.from(document.querySelectorAll("input")).forEach(
+				(input) => (input.value = "")
+			);
 		}
 	};
 

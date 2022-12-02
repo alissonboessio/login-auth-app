@@ -6,7 +6,7 @@ import "./styles.css";
 
 const LoginPage = () => {
 	/* Aqui está sendo chamado o authenticated e o login por contexto */
-	const { authenticated, login } = useContext(AuthContext);
+	const { login } = useContext(AuthContext);
 
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -19,7 +19,7 @@ const LoginPage = () => {
 	return (
 		<div id="login">
 			<h1 className="title">Login no Sistema</h1>
-			{/**{String("Autenticado: " + authenticated)}}**/}
+
 			<form className="form" onSubmit={handleSubmit}>
 				<div className="field">
 					<label htmlFor="email">Email</label>
